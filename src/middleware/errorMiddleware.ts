@@ -12,9 +12,11 @@ export const errorMiddleware = (): Middleware =>
       }
 
       const { status, message } = err;
-      const formattedMessage = status === 500 ? "Something went wrong"
-      : message;
-      response.status = status.valueOf();
-      response.body = { status, message: formattedMessage };
+      const formattedStatus = status >= 500 ? 500 : status;
+      const formattedMessage = formattedStatus === 500
+        ? "Something went wrong!"
+        : message;
+      response.status = formattedStatus.valueOf();
+      response.body = { status: formattedStatus, message: formattedMessage };
     }
   };
