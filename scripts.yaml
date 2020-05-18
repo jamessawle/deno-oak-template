@@ -1,0 +1,12 @@
+# scripts.yaml
+allow:
+    - env
+scripts:
+    start: 
+        desc: Start server
+        cmd: ./src/server.ts
+        allow:
+            net: 127.0.0.1:3100
+        env:
+            PORT: 3100
+    test: deno test

@@ -10,6 +10,9 @@ const getRoutes = () => {
   return router;
 };
 
+const host = Deno.env.get('HOST') || '127.0.0.1';
+const port = Deno.env.get('PORT') || 8080;
+
 const app = new Application();
 const router = getRoutes();
 
@@ -18,6 +21,5 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 app.use(notFoundHandler);
 
-const port = 3100;
 console.log(`Server started on port ${port}`);
-await app.listen({ port });
+await app.listen(`${host}:${port}`);
