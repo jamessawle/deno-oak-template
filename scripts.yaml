@@ -2,9 +2,19 @@
 allow:
     - env
 scripts:
-    start: 
+    dev: 
         desc: Start server
         cmd: ./src/server.ts
+        allow:
+            net: 127.0.0.1:3100
+        env:
+            PORT: 3100
+    build:
+        desc: Build the server into the build folder
+        cmd: ./scripts/build.sh
+    start:
+        desc: Start a built instance of the server
+        cmd: deno run ./build/server.js
         allow:
             net: 127.0.0.1:3100
         env:
