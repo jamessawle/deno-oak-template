@@ -1,4 +1,4 @@
-import { Application, Router } from "https://deno.land/x/oak/mod.ts";
+import { Application, Router } from "oak";
 import { errorMiddleware } from "./middleware/errorMiddleware.ts";
 import { notFoundHandler } from "./handlers/notFoundHandler.ts";
 

@@ -1,4 +1,4 @@
-import { Middleware, isHttpError } from "https://deno.land/x/oak/mod.ts";
+import { Middleware, isHttpError } from "oak";
 
 export const errorMiddleware = (): Middleware =>
   async ({ response }, next) => {

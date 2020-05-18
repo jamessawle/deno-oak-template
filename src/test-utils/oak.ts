@@ -1,4 +1,4 @@
-import { Application, Context } from "https://deno.land/x/oak/mod.ts";
+import { Application, Context } from "oak";
 
 export const createContext = (): Context => {
   const app: Application = {} as any;

@@ -1,7 +1,7 @@
 import { createContext } from "../test-utils/oak.ts";
 import { errorMiddleware } from "./errorMiddleware.ts";
-import { assertEquals } from "https://deno.land/std@0.51.0/testing/asserts.ts";
-import { createHttpError } from "https://deno.land/x/oak/httpError.ts";
+import { assertEquals } from "std/testing/asserts.ts";
+import { createHttpError } from "oak/httpError.ts";
 const middleware = errorMiddleware();
 
 Deno.test("Error middleware should return 500 when generic error thrown", () => {

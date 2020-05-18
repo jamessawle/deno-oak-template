@@ -3,12 +3,13 @@ allow:
     - env
 scripts:
     dev: 
-        desc: Start server
-        cmd: ./src/server.ts
+        desc: Development
+        cmd: deno run --unstable ./src/server.ts
         allow:
             net: 127.0.0.1:3100
         env:
             PORT: 3100
+        imap: importMap.json
     build:
         desc: Build the server into the build folder
         cmd: ./scripts/build.sh
@@ -19,4 +20,6 @@ scripts:
             net: 127.0.0.1:3100
         env:
             PORT: 3100
-    test: deno test
+    test:
+        cmd: deno test --unstable
+        imap: importMap.json

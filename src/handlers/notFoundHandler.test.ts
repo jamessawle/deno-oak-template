@@ -1,10 +1,10 @@
 import { notFoundHandler } from "./notFoundHandler.ts";
 import { createContext } from "../test-utils/oak.ts";
-import { createHttpError } from "https://deno.land/x/oak/httpError.ts";
+import { createHttpError } from "oak/httpError.ts";
 import {
   AssertionError,
   assertEquals,
-} from "https://deno.land/std@0.51.0/testing/asserts.ts";
+} from "std/testing/asserts.ts";
 
 Deno.test("notFoundHandler should throw 404", async () => {
   const context = createContext();
